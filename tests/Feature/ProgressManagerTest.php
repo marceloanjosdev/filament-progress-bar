@@ -1,9 +1,6 @@
 <?php
 
-use MarceloAnjosDev\FilamentProgressBar\Progress\ProgressManager;
-
 use MarceloAnjosDev\FilamentProgressBar\Tests\Support\ProgressManagerFactory;
-use function Pest\Laravel\withoutExceptionHandling;
 
 it('initializes a progress bar with total and label', function () {
     [$progress, $repo] = ProgressManagerFactory::make();
@@ -70,4 +67,3 @@ it('auto completes when current reaches total', function () {
     $progress->update('k1'); // reaches total -> complete
     expect($repo->get('k1'))->toBeNull();
 });
-
