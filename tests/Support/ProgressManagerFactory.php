@@ -8,7 +8,7 @@ final class ProgressManagerFactory
 {
     public static function make(): array
     {
-        $repository = new InMemoryProgressRepository();
+        $repository = new InMemoryProgressRepository;
         $manager = new ProgressManager($repository);
 
         return [$manager, $repository];
